@@ -23,3 +23,23 @@ let score = 400;
 if (typeof score === "number") {
   console.log("Yep, This is a Number");
 }
+
+let isTeaReady = false;
+
+if (isTeaReady) {
+  console.log("Yes Tea is ready");
+} else if (!isTeaReady) {
+  console.log("Sorry, The Tea isn't ready yet");
+}
+
+let items = [];
+
+console.log(items.length);
+
+if (items.length === 0) {
+  console.log("Array is empty");
+  items = ["Hello"];
+} else {
+  console.log("The Array is not empty");
+}
+console.log(items);
