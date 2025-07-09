@@ -24,7 +24,7 @@ function flipBoolean(value) {
 // 3. whatAmI  typeof will return 'object' for arrays, null, and other complex types, which might need additional checks. typeof will return 'object' for arrays, null, and other complex types, which might need additional checks.
 
 function whatAmI(type) {
-  if (type == undefined) return `it is Undefined`;
+  if (type == undefined) return `it is Undefined `;
   else if ((type = null)) return `It is null`;
   else if (typeof type === Function) return `it is a Function`;
   else if (typeof type === Array) return `it is a Array`;
