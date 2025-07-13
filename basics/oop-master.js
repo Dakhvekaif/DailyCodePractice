@@ -72,7 +72,91 @@ class BankAccount {
 }
 
 let account = new BankAccount();
+console.log(account.deposit(5000));
+account.deposit(1000);
 console.log(account.getBalance());
 
 // Abstraction
 
+class coffeeMachine {
+  start() {
+    //call DB
+    //filter value
+    return `Starting the Machine...`;
+  }
+  brewCoffee() {
+    // complex calculation
+    return `Brewing coffee`;
+  }
+
+  pressStartButton() {
+    let msg1 = this.start();
+    let msg2 = this.brewCoffee();
+    return `${msg1} & ${msg2}`;
+  }
+}
+
+let myMachine = new coffeeMachine();
+// console.log(myMachine.pressStartButton());
+
+// Polymorphism
+
+class Bird {
+  fly() {
+    return `Hey, I am flying`;
+  }
+}
+
+class Penguin extends Bird {
+  fly() {
+    return `hey, Penguins cant fly`;
+  }
+}
+
+let bird = new Bird();
+let penguin = new Penguin();
+
+console.log(bird.fly());
+console.log(penguin.fly());
+
+// static method
+
+class Calculator {
+  static add(a, b) {
+    return a + b;
+  }
+}
+
+// let miniCalc = new Calculator();
+// console.log(miniCalc.add(2, 3));
+
+console.log(Calculator.add(20, 33)); // The static keyword defines methods or properties to the class itself rather than the instance, so it can directly be accessed
+
+//Getter and Setters
+
+class Employee {
+  #salary;
+  constructor(name, salary) {
+    if (salary < 0) {
+      throw new Error("Salary cannot be in negative ");
+    }
+    this.name = name;
+    this.#salary = salary;
+  }
+
+  get salary() {
+    return `You are not allowed to see salary`;
+  }
+
+  set salary(value) {
+    if (value < 0) {
+      console.Error("Invalid request");
+    } else {
+      this._salary = value;
+    }
+  }
+}
+let emp = new Employee("Alice", 50000);
+console.log(emp.salary);
+emp.salary = 60000;
+console.log(emp._salary);
