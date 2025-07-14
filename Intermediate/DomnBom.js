@@ -41,3 +41,44 @@ document
     let taskList = document.getElementById("taskList");
     taskList.lastElementChild.remove();
   });
+
+// challenge 6
+
+document.getElementById("clickMeButton").addEventListener("click", function () {
+  alert("Coding Challenges");
+});
+
+// challenge 7
+
+document.getElementById("teaList").addEventListener("click", function (event) {
+  if (event.target && event.target.matches(".teaItem")) {
+    alert("you Selected : " + event.target.textContent);
+  }
+});
+
+// challenge 8
+
+document
+  .getElementById("feedbackForm")
+  .addEventListener("submit", function (event) {
+    event.preventDefault();
+    let feedback = document.getElementById("feedbackInput").value;
+    document.getElementById(
+      "feedbackDisplay"
+    ).textContent = `Feedback is : ${feedback}`;
+  });
+
+// challenge 9
+
+document.addEventListener("DOMContentLoaded", function () {
+  document.getElementById("domStatus").textContent = "DOM fully loaded";
+});
+
+// challenge 10
+
+document
+  .getElementById("toggleHighlight")
+  .addEventListener("click", function () {
+    let textDescription = document.getElementById("textDescription");
+    textDescription.classList.add("highlight");
+  });
